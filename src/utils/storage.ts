@@ -7,11 +7,26 @@ export const storageUtils = {
     try {
       if (typeof chrome !== 'undefined' && chrome.storage) {
         const result = await chrome.storage.local.get(STORAGE_KEY);
-        return result[STORAGE_KEY] || [];
+        const notes = result[STORAGE_KEY] || [];
+        // Convert date strings back to Date objects
+        return notes.map((note: any) => ({
+          ...note,
+          createdAt: new Date(note.createdAt),
+          updatedAt: new Date(note.updatedAt)
+        }));
       } else {
         // Fallback to localStorage for development
         const stored = localStorage.getItem(STORAGE_KEY);
-        return stored ? JSON.parse(stored) : [];
+        if (stored) {
+          const notes = JSON.parse(stored);
+          // Convert date strings back to Date objects
+          return notes.map((note: any) => ({
+            ...note,
+            createdAt: new Date(note.createdAt),
+            updatedAt: new Date(note.updatedAt)
+          }));
+        }
+        return [];
       }
     } catch (error) {
       console.error('Error loading notes:', error);
