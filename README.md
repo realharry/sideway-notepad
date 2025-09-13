@@ -1,5 +1,31 @@
 # Sideway Notepad
 
+## Note
+
+This chrome extension is primarily implemented by @copilot. Today (2025-09-11), I used GitHub Copilot to create five Chrome extensions:
+
+- https://github.com/realharry/quick-screenshot
+- https://github.com/realharry/omnibox-chatbot
+- https://github.com/realharry/sideway-chatmot
+- https://github.com/realharry/sideway-notepad
+- https://github.com/realharry/ai-tts-reader
+
+It was a literally a day's work. This is amazing, and somewhat disheartening at the same time. I've been learning the Chrome Extensions APIs for the last couple of weeks (mostly trying out different APIs and building a "universal template" which I can use to build various different extensions). When we have coding assistants like Copilot, Gemini Coding Assistant, and Anthropic's Claude, OpenAI's Codex, Cursor, Windsurf, Replit, Cline, etc. etc. just to name a few, what is the role, and the true value, of human software developers?
+
+
+
+### The Original Prompt:
+
+Create a notepad Chrome extension with Typescript, React, and Vite. When a user clicks on the extension icon, it opens a sidepanel window, and not a popup. In the sidepanel, it shows a notepad interface, with a text area for a new note, a list of notes, and update/delete note, etc. The notes are stored in the browser's local storage, but it may be connected to a backend server later. The UI should be clean and minimalistic. Also, overwrite the newtab page to show the same notepad interface.
+
+
+
+The rest is primarily written by Copliot, based on my initial prompt.
+
+
+
+## Description
+
 A clean and minimalistic notepad Chrome extension built with TypeScript, React, and Vite. Take notes in a sidepanel or use it as your new tab page.
 
 ## Features
